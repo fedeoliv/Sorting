@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define MAXN 50
 
 /*  Complexity: O(Nlog(n))
@@ -24,6 +25,11 @@ int compare_desc(const void *a, const void *b) {
     else return 1;
 }
 
+/* Function for char array */
+int comp(const void *a, const void *b) {
+  return strcmp(*(const char **)a, *(const char **)b);
+}
+
 void printResult(int v[], int n) {
     for(int i = 0; i < n; i++) printf("%d ", v[i]);
 }
@@ -35,6 +41,7 @@ int main() {
     for(int i = 0; i < n; i++) scanf("%d", &v[i]);
 
     qsort(v, n, sizeof(int), compare_asc);
+    // qsort(v, n, sizeof(char *), comp);
     printResult(v, n);
     return 0;
 }
