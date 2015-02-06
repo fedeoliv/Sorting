@@ -27,7 +27,7 @@ int compare_desc(const void *a, const void *b) {
 
 /* Function for char array */
 int comp(const void *a, const void *b) {
-  return strcmp(*(const char **)a, *(const char **)b);
+    return strcmp(*(const char **)a, *(const char **)b);
 }
 
 void printResult(int v[], int n) {
